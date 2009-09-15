@@ -5,9 +5,13 @@
 List of future changes and features
 
 
-= Details =
+== Next version ==
 
-Next version:
 
- * feature1
- * feature2
+ * List of scripts to exclude from analysis
+ * Add time units: s for seconds and ms for millisecs
+
+== Future versions ==
+
+ * Unit tests
+ * Higher level statistics, such as apdex scores
