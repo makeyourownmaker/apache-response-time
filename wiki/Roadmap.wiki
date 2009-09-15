@@ -4,8 +4,9 @@
 == Next version ==
 
 
- * List of scripts to exclude from analysis
+ * Add option to exclude scripts from analysis
  * Add time units: s for seconds and ms for millisecs
+
 
 == Future versions ==
 
