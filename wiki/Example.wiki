@@ -79,20 +79,20 @@ Size	14.58	144.11M	7.34k	179.33k	12.87k	19.59k	5.41k	12.16k
 Time range [07/Sep/2009:00:00:01 +0100] to [07/Sep/2009:23:59:53 +0100]
 
 Min time:
-http://supfam.org/SUPERFAMILY/cgi-bin/scop.cgi?&loc=http://mirror.protres.ru/scop/&scopver=1.75&sunid=151351&tlev=px
+http://supfam.org/SUPERFAMILY/cgi-bin/scop.cgi?sunid=151351
 Median time:
-http://supfam.org/SUPERFAMILY/cgi-bin/scop.cgi?&loc=http://scop.protres.ru/&scopver=1.75&sunid=20876&tlev=px
+http://supfam.org/SUPERFAMILY/cgi-bin/scop.cgi?sunid=20876
 95th percentile:
-http://supfam.org/SUPERFAMILY/cgi-bin/scop.cgi?&loc=http://scop.protres.ru/&scopver=1.75&sunid=27844&tlev=px
+http://supfam.org/SUPERFAMILY/cgi-bin/scop.cgi?sunid=27844
 Max time:
-http://supfam.org/SUPERFAMILY/cgi-bin/scop.cgi?&loc=http://scop.protres.ru/&scopver=1.75&sunid=153375&tlev=px
+http://supfam.org/SUPERFAMILY/cgi-bin/scop.cgi?sunid=153375
 
 Min size:
 http://supfam.org/SUPERFAMILY/cgi-bin/scop.cgi?sunid=47094
 Median size:
-http://supfam.org/SUPERFAMILY/cgi-bin/scop.cgi?&loc=http://scop.bic.nus.edu.sg/&scopver=1.73&sunid=139890&tlev=px
+http://supfam.org/SUPERFAMILY/cgi-bin/scop.cgi?sunid=139890
 95th percentile:
-http://supfam.org/SUPERFAMILY/cgi-bin/scop.cgi?&loc=http://loki.polito.it/scop/&scopver=1.69&sunid=24136&tlev=px
+http://supfam.org/SUPERFAMILY/cgi-bin/scop.cgi?sunid=24136
 Max size:
 http://supfam.org/SUPERFAMILY/cgi-bin/scop.cgi?sunid=53931
 
@@ -140,7 +140,7 @@ Max time:
 http://supfam.org/SUPERFAMILY/cgi-bin/gen_list.cgi?genome=k4
 
 Min size:
-http://supfam.org/SUPERFAMILY/cgi-bin/gen_list.cgi?listtype=fa;genome=5s;sortby=prot;genpass=
+http://supfam.org/SUPERFAMILY/cgi-bin/gen_list.cgi?listtype=fa;genome=5s;sortby=prot
 Median size:
 http://supfam.org/SUPERFAMILY/cgi-bin/gen_list.cgi?genome=d2
 95th percentile:
