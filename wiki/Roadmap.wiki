@@ -1,5 +1,6 @@
 #summary List of future changes and features
 
+= apache-response-time command =
 
 == Next version ==
 
@@ -10,5 +11,13 @@
 
 == Future versions ==
 
- * Unit tests
  * Higher level statistics, such as apdex scores
+ * Unit tests
+
+
+= apache-response-time project site =
+
+== Additional wiki pages ==
+
+ * Changelist
+ * Buglist
