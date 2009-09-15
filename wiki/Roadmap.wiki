@@ -1,9 +1,5 @@
 #summary List of future changes and features
 
-= Introduction =
-
-List of future changes and features
-
 
 == Next version ==
 
