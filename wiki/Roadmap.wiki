@@ -1,0 +1,13 @@
+#summary List of future changes and features
+
+= Introduction =
+
+List of future changes and features
+
+
+= Details =
+
+Next version:
+
+ * feature1
+ * feature2
