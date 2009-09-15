@@ -11,7 +11,7 @@
 
 == Future versions ==
 
- * Higher level statistics, such as apdex scores
+ * Higher level statistics, such as [http://en.wikipedia.org/wiki/Apdex apdex scores]
  * Unit tests
 
 
