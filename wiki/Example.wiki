@@ -1,3 +1,5 @@
+<wiki:toc max_depth="1" />
+
 #summary Short example of apache-response-time output.
 
 
