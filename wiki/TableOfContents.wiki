@@ -1,6 +1,6 @@
 #sidebar TableOfContents
 
  * [http://code.google.com/p/apache-response-time/wiki/Installation Installation]
- * [ Usage]
- * [ Example]
- * [ Roadmap]
+ * [http://code.google.com/p/apache-response-time/wiki/Usage Usage]
+ * [http://code.google.com/p/apache-response-time/wiki/Example Example]
+ * [http://code.google.com/p/apache-response-time/wiki/Roadmap Roadmap]
