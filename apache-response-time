@@ -110,6 +110,7 @@ check_cli_opts( $logfile, $LIMIT, $ORDER, $date_re, \@VALID_ORDER );
 my %url_count;
 
 my %script_stats = get_stats();
+check_stats(\%script_stats);
 
 my $script_stats_ref = calc_summary_stats( \%script_stats, $elapsed_secs );
 
@@ -283,10 +284,10 @@ sub print_ranked_stats {
 
         printf "%4s\t%5s\t%8s %5s%%\t%7s\t",
                $rank,
-	       $stats{$key}{calls},
-	       $form_time,
-	       $form_pc_time,
-	       $form_call_time;
+               $stats{$key}{calls},
+               $form_time,
+               $form_pc_time,
+               $form_call_time;
         printf "$short_bytes\t";
         say $key;
 
@@ -413,12 +414,12 @@ sub get_stddev {
     foreach my $script_new (@scripts) {
         next if $script_new eq 'overall';
 
-	foreach my $date ( keys %{$stats{$script_new}} ) {
-	    next if $date !~ /^\[.*\]$/;
+        foreach my $date ( keys %{$stats{$script_new}} ) {
+            next if $date !~ /^\[.*\]$/;
 
-	    $variation_sum += ( $stats{$script_new}{$date}{$key} - $mean )**2;
-	    $freq++;
-	}
+            $variation_sum += ( $stats{$script_new}{$date}{$key} - $mean )**2;
+            $freq++;
+        }
     }
 
     my $stddev = 0;
@@ -427,6 +428,16 @@ sub get_stddev {
     }
 
     return $stddev;
+}
+
+
+sub check_stats {
+    my %stats = %{(shift)};
+
+    my $stats_size = keys %stats;
+    die "No matches in access log!\n" if $stats_size == 0;
+
+    return 0;
 }
 
 
@@ -456,7 +467,7 @@ sub calc_summary_stats {
         $stats{$script}{mean_bytes} = $stats{$script}{bytes} / $stats{$script}{calls};
 
         $stats{$script}{call_time}     = $stats{$script}{time}  / ( $stats{$script}{calls} * $TIME_UNIT );
-	$stats{$script}{calls_per_sec} = $stats{$script}{calls} / $elapsed_time;
+        $stats{$script}{calls_per_sec} = $stats{$script}{calls} / $elapsed_time;
         $stats{$script}{throughput}    = $stats{$script}{bytes} * $TIME_UNIT / $stats{$script}{time};
 
         $stats{$script}{pc_time}  = $stats{$script}{time}  * 100 / $stats{overall}{time};
