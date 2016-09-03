@@ -86,7 +86,7 @@ GetOptions(
     'd|date=s'       => \$date_re,
     's|server=s'     => \$SERVER,
     'b|bin-path=s'   => \$BIN_PATH,
-    'e|extension'    => \$SCRIPT_EXTENSION,
+    'e|extension=s'  => \$SCRIPT_EXTENSION,
     'help|?'         => \$help,
 ) or usage( $DEF_LIMIT, \@VALID_ORDER );
 
@@ -107,17 +107,17 @@ check_cli_opts( $logfile, $LIMIT, $ORDER, $date_re, \@VALID_ORDER );
 # 216.129.119.41 - - [22/Jun/2009:10:32:52 +0100] "GET /SUPERFAMILY/cgi-bin/dot.cgi?sf=52029;type=superfamily HTTP/1.0" 200 5668 44895720 "-" "Mozilla/5.0 (Twiceler-0.9 http://www.cuil.com/twiceler/robot.html)"
 
 
-my %url_count;
+my %URL_COUNT;
 
 my %script_stats = get_stats();
-check_stats(\%script_stats);
+check_stats(\%script_stats); 
 
 my $script_stats_ref = calc_summary_stats( \%script_stats, $elapsed_secs );
 
 print_summary_stats( $script_stats_ref );
 print_ranked_stats( $script_stats_ref, $LIMIT );
 print_detailed_stats( $script_stats_ref, $LIMIT );
-print_most_freq_urls( \%url_count );
+print_most_freq_urls( \%URL_COUNT );
 
 
 exit 0;
@@ -140,7 +140,7 @@ sub get_stats {
             my $bytes  = $5;
             my $time   = $6;
 
-            if ( $url =~ /$BIN_PATH_RE/ && $status == 200 && $date =~ /$date_re/ ) {
+            if ( $url =~ /$BIN_PATH_RE/ && $status =~ /[23]\d\d/ && $date =~ /$date_re/ ) {
                 my ( $method, $script_path, $protocol ) = $url =~ /^"(\w+)\s(\S+)\s(\S+)"$/;
 
                 next unless defined $script_path; # skips URLs containing spaces
@@ -301,7 +301,7 @@ sub print_ranked_stats {
 
 
 sub print_most_freq_urls {
-    my %url_counts     = %{ (shift) };
+    my %url_count      = %{ (shift) };
     my $TOP_URLS_LIMIT = 11;
 
     say 'Most frequently requested URLs:';
@@ -559,7 +559,7 @@ sub get_script_name {
 
     return $path if $path eq 'overall';
 
-    my ($script) = $path =~ /$BIN_PATH_RE(\w+.$SCRIPT_EXTENSION)/;
+    my ($script) = $path =~ /$BIN_PATH_RE(\S+.$SCRIPT_EXTENSION)/;
 
     return $script;
 }
@@ -574,11 +574,11 @@ sub update_stats {
 
     my $script = get_script_name($path);
 
-    if ( !defined $url_count{$path} ) {
+    if ( !defined $URL_COUNT{$path} ) {
         $stats{overall}{uniq_urls}++;
     }
 
-    $url_count{$path}++;
+    $URL_COUNT{$path}++;
 
     if ( defined $script ) {
         $stats{$script}{calls}++;
