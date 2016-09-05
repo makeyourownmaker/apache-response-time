@@ -614,7 +614,10 @@ sub check_cli_opts {
 
     die "Access log file ($logfile) does not exist!\n" unless -e $logfile;
 
-    die "Limit ($LIMIT) is not an integer\n" unless $LIMIT =~ /^\d+$/;
+    die "Limit ($LIMIT) is not a one or two digit integer\n" 
+      unless $LIMIT =~ /^\d{1,2}$/;
+
+    die "Limit cannont be equal to zero!\n" if $LIMIT == 0;
 
     die "Order by ($ORDER) must be one of: @VALID_ORDER\n"
       unless grep { /$ORDER/ } @VALID_ORDER;
