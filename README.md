@@ -6,12 +6,12 @@ server access log file. It's primary focus is on script response time.
 
 # Table of contents
 
- * [Major output sections](#Major-output-sections)
- * [Statistical measures](#Statistical-measures)
- * [Example output](#Example-output)
- * [Installation and configuration](#Installation-and-configuration)
- * [Command line options](#Command-line-options)
- * [Usage examples](#Usage-examples)
+ * [Major output sections](#major-output-sections)
+ * [Statistical measures](#statistical-measures)
+ * [Example output](#example-output)
+ * [Installation and configuration](#installation-and-configuration)
+ * [Command line options](#command-line-options)
+ * [Usage examples](#usage-examples)
  
 
 # Major output sections
@@ -265,7 +265,7 @@ LogFormat "%h %l %u %t \"%r\" %>s %b %D"  # LogFormat including response time
 
 Restart apache.
 
-[http://httpd.apache.org/docs/2.0/mod/mod_log_config.html#logformat](Apache LogFormat directive.)
+[Apache LogFormat directive.](http://httpd.apache.org/docs/2.0/mod/mod_log_config.html#logformat)
 
 # Command line options
 
