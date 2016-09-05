@@ -559,7 +559,7 @@ sub get_script_name {
 
     return $path if $path eq 'overall';
 
-    my ($script) = $path =~ /$BIN_PATH_RE(\S+.$SCRIPT_EXTENSION)/;
+    my ($script) = $path =~ /$BIN_PATH_RE(\S+?.$SCRIPT_EXTENSION)/;
 
     return $script;
 }
