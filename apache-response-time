@@ -371,14 +371,9 @@ sub set_percentiles {
     $p95point = $calls if $p95point >= $calls; # $calls is small
 
     my $odd_calls = $calls % 2;
-    my $midpoint;
+    my $midpoint  = $calls/2;
 
-    if ( $odd_calls ) {
-        $midpoint = ($calls + 1)/2;
-    }
-    else {
-        $midpoint = $calls/2;
-    }
+    $midpoint = ($calls + 1)/2 if $odd_calls;
 
     $stats{$script}{"median_$key"}      = $stats{$script}{$elements[$midpoint-1]}{$key} || 0;
     $stats{$script}{"median_$key\_url"} = $stats{$script}{$elements[$midpoint-1]}{url}  || '';
