@@ -4,6 +4,8 @@
 apache-response-time is a performance analysis tool for the apache web 
 server access log file. It's primary focus is on script response time.
 
+If you like apache-response-time, give it a star!
+
 **Maintainence Mode** This code is now fairly mature.  I don't plan on making
 any further changes.  I might integrate your pull request or fix any bugs 
 which crash the tool but I'm unlikely to respond to other issues.
